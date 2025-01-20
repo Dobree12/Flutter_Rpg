@@ -1,36 +1,37 @@
-import 'package:testproj/models/skill.dart';
-import 'package:testproj/models/stats.dart';
-import 'package:testproj/models/vocation.dart';
+import 'package:testam_sa_mearga/models/skill.dart';
+import 'package:testam_sa_mearga/models/stats.dart';
+import 'package:testam_sa_mearga/models/vocation.dart';
+class Character with Stats {
 
-class Character with Stats{
-  //constructor 
-  Character({
-    required this.name, required this. slogan, required this.vocation,required this.id
-    });
+  // constructor 
+  Character({ 
+    required this.name, required this.slogan, required this.vocation, required this.id,
+  });
 
-  //fields
-  final Set<Skill> skills={};
+  // fields
+  final Set<Skill> skills = {};
   final Vocation vocation;
   final String name;
   final String slogan;
   final String id;
-  bool _isFav= false;
+  bool _isFav = false;
 
-  //getters
-  get isFav =>_isFav;
+  // getters
+  get isFav => _isFav;
 
-  void toggleIsFav(){
+  // methods
+  void toggleIsFav() {
     _isFav = !_isFav;
   }
 
-  void updateSkill(Skill skill){
+  void updateSkills(Skill skill) {
     skills.clear();
     skills.add(skill);
-
   }
 }
 
-//dummy character data
+// dummy character data
+
 List<Character> characters = [
   Character(id: '1', name: 'Klara', vocation: Vocation.wizard, slogan: 'Kapumf!'),
   Character(id: '2', name: 'Jonny', vocation: Vocation.junkie, slogan: 'Light me up...'),

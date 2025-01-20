@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:testproj/models/character.dart';
-import 'package:testproj/screens/home/character_card.dart';
-import 'package:testproj/shared/styled_button.dart';
-import 'package:testproj/shared/styled_text.dart';
-
+import 'package:testam_sa_mearga/models/character.dart';
+import 'package:testam_sa_mearga/screens/create/create.dart';
+import 'package:testam_sa_mearga/screens/home/character_card.dart';
+import 'package:testam_sa_mearga/shared/styled_button.dart';
+import 'package:testam_sa_mearga/shared/styled_text.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -22,26 +22,31 @@ class _HomeState extends State<Home> {
         centerTitle: true,
       ),
       body: Container(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           children: [
+            // list of characters
             Expanded(
-              child: 
-                ListView.builder(
-                  itemCount: characters.length,
-                  itemBuilder: (_,index){
-                    return CharacterCard(characters[index]);
-                    },
-                  ),
-                ),
-              
-                StyledButton(
-                onPressed: (){},
-                child: StyledHeading('Create new')
-                 )
-              ],
+              child: ListView.builder(
+                itemCount: characters.length,
+                itemBuilder: (_, index) {
+                  return CharacterCard(characters[index]);
+                }
+              ),
             ),
+            
+            StyledButton(
+              onPressed: () {
+                // navigate to the create screen
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (ctx)=> Create(),
+                  ));
+              },
+              child: const StyledHeading('Create New'),
+            ),
+          ]
         ),
-      );
+      ),
+    );
   }
 }

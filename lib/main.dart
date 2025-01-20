@@ -1,30 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:testproj/screens/create/create.dart';
-import 'package:testproj/screens/home/home.dart';
-import 'package:testproj/theme.dart';
+import 'package:testam_sa_mearga/screens/create/create.dart';
+import 'package:testam_sa_mearga/screens/home/home.dart';
+import 'package:testam_sa_mearga/screens/home/home.dart';
+import 'package:testam_sa_mearga/theme.dart';
 
 void main() {
-  runApp( MaterialApp(
+  runApp(MaterialApp(
     theme: primaryTheme,
-    home: Create(),
+    home: const Home(),
   ));
 }
 
-class SandBox extends StatelessWidget {
-  const SandBox({super.key});
+// sandbox
+class Sandbox extends StatelessWidget {
+  const Sandbox({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SandBox'),
+        title: const Text('Sandbox'),
         backgroundColor: Colors.grey,
       ),
-      body: Text('sandbox'),
+      body: const Text('sandbox'),
     );
   }
 }
-
-enum Priority{low, medium, high, urgent}
-
-Priority p = Priority.medium;

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppColors { //setting own pallete of colors
-
+class AppColors {
   static Color primaryColor = const Color.fromRGBO(162, 29, 19, 1);
   static Color primaryAccent = const Color.fromRGBO(120, 14, 14, 1);
   static Color secondaryColor = const Color.fromRGBO(45, 45, 45, 1);
@@ -14,55 +13,57 @@ class AppColors { //setting own pallete of colors
 
 ThemeData primaryTheme = ThemeData(
 
-  //seed color
+  // seed color theme
   colorScheme: ColorScheme.fromSeed(
-    seedColor: AppColors.primaryColor
-    ),
-
-//scaffold color
-    scaffoldBackgroundColor: AppColors.secondaryAccent,
-
-    //app bar theme colors
-    appBarTheme: AppBarTheme(
-      backgroundColor: AppColors.secondaryColor,
-      foregroundColor: AppColors.textColor,
-      surfaceTintColor: Colors.transparent,
-      centerTitle: true,
-    ),
-
-    textTheme: TextTheme(
-      bodyMedium: TextStyle(
-        color: AppColors.textColor,
-        fontSize: 16,
-        letterSpacing: 1,
-      ),
-      headlineMedium:  TextStyle(
-        color: AppColors.titleColor,
-        fontSize: 16,
-        fontWeight: FontWeight.bold,
-        letterSpacing: 1,
-    ),
-    titleMedium: TextStyle(
-        color: AppColors.titleColor,
-        fontSize: 18,
-        fontWeight: FontWeight.bold,
-        letterSpacing: 2,
-        ),
-    ),
-
-  // Card Theme
-  cardTheme: CardTheme(
-    color: AppColors.secondaryColor.withOpacity(0.2),
-    shape: RoundedRectangleBorder(),
-    shadowColor: Colors.transparent,
-    margin: EdgeInsets.only(bottom: 16),
+    seedColor: AppColors.primaryColor,
   ),
 
-  //input decoration theme
+  // scaffold color
+  scaffoldBackgroundColor: AppColors.secondaryAccent,
+
+  // app bar theme colors
+  appBarTheme: AppBarTheme(
+    backgroundColor: AppColors.secondaryColor,
+    foregroundColor: AppColors.textColor,
+    surfaceTintColor: Colors.transparent,
+    centerTitle: true,
+  ),
+
+  // text theme
+  textTheme: TextTheme(
+    bodyMedium: TextStyle(
+      color: AppColors.textColor,
+      fontSize: 16,
+      letterSpacing: 1,
+    ),
+    headlineMedium: TextStyle(
+      color: AppColors.titleColor, 
+      fontSize: 16,
+      fontWeight: FontWeight.bold, 
+      letterSpacing: 1,
+    ),
+    titleMedium: TextStyle(
+      color: AppColors.titleColor, 
+      fontSize: 18, 
+      fontWeight: FontWeight.bold,
+      letterSpacing: 2,
+    ),
+  ),
+
+  // card theme
+  cardTheme: CardTheme(
+    color: AppColors.secondaryColor.withOpacity(0.5),
+    surfaceTintColor: Colors.transparent,
+    shape: const RoundedRectangleBorder(),
+    shadowColor: Colors.transparent,
+    margin: const EdgeInsets.only(bottom: 16),
+  ),
+
+  // input decoration theme
   inputDecorationTheme: InputDecorationTheme(
     filled: true,
-    fillColor: AppColors.secondaryColor.withOpacity(0.8),
-    border: InputBorder.none,
+    fillColor: AppColors.secondaryColor.withOpacity(0.5),
+    border: InputBorder.none, 
     labelStyle: TextStyle(color: AppColors.textColor),
     prefixIconColor: AppColors.textColor,
   ),

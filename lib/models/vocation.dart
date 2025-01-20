@@ -1,5 +1,5 @@
-enum Vocation {
-    raider(
+enum Vocation { 
+  raider(
     title: "Terminal Raider", 
     description: "Adept in terminal commands to trigger traps.",
     weapon: "Terminal",
@@ -28,12 +28,12 @@ enum Vocation {
     image: "algo_wizard.jpg"
   );
 
- const Vocation({
-    required this.title,
+  const Vocation({ 
+    required this.title, 
     required this.description,
     required this.image,
     required this.weapon,
-    required this.ability
+    required this.ability,
   });
 
   final String title;
@@ -41,6 +41,5 @@ enum Vocation {
   final String image;
   final String weapon;
   final String ability;
+  
 }
-
-Vocation v = Vocation.junkie;
