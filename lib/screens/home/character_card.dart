@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:testam_sa_mearga/models/character.dart';
+<<<<<<< HEAD
 import 'package:testam_sa_mearga/screens/profile/profile.dart';
+=======
+>>>>>>> c6449a7b6947f1de76ba91762c04d508ab5ef955
 import 'package:testam_sa_mearga/shared/styled_text.dart';
 import 'package:testam_sa_mearga/theme.dart';
 
@@ -37,9 +40,12 @@ class CharacterCard extends StatelessWidget {
             IconButton(
               onPressed: () {
                 // navigate to character profile screen
+<<<<<<< HEAD
                   Navigator.push(context, MaterialPageRoute(
                     builder: (ctx)=>Profile(character: character),
                   ));
+=======
+>>>>>>> c6449a7b6947f1de76ba91762c04d508ab5ef955
               },
               icon: Icon(Icons.arrow_forward, color: AppColors.textColor)
             ),
