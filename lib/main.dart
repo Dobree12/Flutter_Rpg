@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:testam_sa_mearga/screens/create/create.dart';
+import 'package:provider/provider.dart';
+//import 'package:testam_sa_mearga/screens/create/create.dart';
 import 'package:testam_sa_mearga/screens/home/home.dart';
-import 'package:testam_sa_mearga/screens/home/home.dart';
+import 'package:testam_sa_mearga/services/character_store.dart';
+//import 'package:testam_sa_mearga/screens/home/home.dart';
 import 'package:testam_sa_mearga/theme.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MaterialApp(
-    theme: primaryTheme,
-    home: const Home(),
+  runApp(ChangeNotifierProvider(
+    create : (context)=> CharacterStore(),
+    child: MaterialApp(
+      theme: primaryTheme,
+      home: const Home(),
+    ),
   ));
 }
 

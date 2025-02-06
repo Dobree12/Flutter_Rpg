@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "813883414165",
+    "project_id": "flutter-rpg-e8603",
+    "storage_bucket": "flutter-rpg-e8603.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813883414165:android:84d4efdc4f0ebe1fecad9c",
+        "android_client_info": {
+          "package_name": "com.example.testam_sa_mearga"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnFL34S5BSk9rUT3BGatbSbBJ8CaUWUek"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

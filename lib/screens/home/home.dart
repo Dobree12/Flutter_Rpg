@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:testam_sa_mearga/models/character.dart';
+import 'package:provider/provider.dart';
 import 'package:testam_sa_mearga/screens/create/create.dart';
 import 'package:testam_sa_mearga/screens/home/character_card.dart';
+import 'package:testam_sa_mearga/services/character_store.dart';
 import 'package:testam_sa_mearga/shared/styled_button.dart';
 import 'package:testam_sa_mearga/shared/styled_text.dart';
 
@@ -27,10 +28,14 @@ class _HomeState extends State<Home> {
           children: [
             // list of characters
             Expanded(
-              child: ListView.builder(
-                itemCount: characters.length,
-                itemBuilder: (_, index) {
-                  return CharacterCard(characters[index]);
+              child: Consumer<CharacterStore>(
+                builder: (context, value, child) {
+                  return ListView.builder(
+                    itemCount: value.characters.length,
+                    itemBuilder: (_, index) {
+                      return CharacterCard(value.characters[index]);
+                    },
+                  );
                 }
               ),
             ),
@@ -39,7 +44,7 @@ class _HomeState extends State<Home> {
               onPressed: () {
                 // navigate to the create screen
                 Navigator.push(context, MaterialPageRoute(
-                  builder: (ctx)=> Create(),
+                  builder: (ctx)=> CreateScreen(),
                   ));
               },
               child: const StyledHeading('Create New'),
