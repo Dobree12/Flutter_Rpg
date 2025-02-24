@@ -17,7 +17,7 @@ class CharacterCard extends StatelessWidget {
         child: Row(
           children: [
             Image.asset('assets/img/vocations/${character.vocation.image}', 
-              width: 80
+              width: 60
             ),
 
             const SizedBox(width: 20),

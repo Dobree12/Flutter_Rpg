@@ -45,7 +45,7 @@ class _StatsTableState extends State<StatsTable> {
                     verticalAlignment: TableCellVerticalAlignment.middle,
                     child:Padding(
                       padding: EdgeInsets.all(8),
-                      child: StyledHeading(stats['title']!),
+                      child: StyledText(stats['title']!.toUpperCase()),
                     ),
                    ),
                     //stat value

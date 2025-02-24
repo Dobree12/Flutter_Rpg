@@ -46,25 +46,28 @@ class _SkillListState extends State<SkillList> {
             StyledText('Skills are unique to your vocation'),
             SizedBox(height: 20),
 
-            Row(
-              children: availableSkills.map((skill){
-                return Container(
-                  margin: EdgeInsets.all(5),
-                  padding: EdgeInsets.all(2),
-                  color: skill == selectedSkill ? Colors.yellow : Colors.transparent,
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        widget.character.updateSkills(skill);
-                        selectedSkill = skill;
-                      });
-                    },
-                    child: Image.asset('assets/img/skills/${skill.image}',
-                    width: 70,
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: availableSkills.map((skill){
+                  return Container(
+                    margin: EdgeInsets.all(5),
+                    padding: EdgeInsets.all(2),
+                    color: skill == selectedSkill ? Colors.yellow : Colors.transparent,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          widget.character.updateSkills(skill);
+                          selectedSkill = skill;
+                        });
+                      },
+                      child: Image.asset('assets/img/skills/${skill.image}',
+                      width: 60,
+                      ),
                     ),
-                  ),
-                );
-              }).toList(),
+                  );
+                }).toList(),
+              ),
             ),
             const SizedBox(height: 10),
             StyledText(selectedSkill.name),

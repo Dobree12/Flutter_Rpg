@@ -16,25 +16,25 @@ mixin Stats {
   ];
 
   Map<String, int> get statsAsMap => {
-    "health": _health,
-    "attack": _attack,
-    "defense": _defense,
-    "skill": _skill,
+    "Health": _health,
+    "Attack": _attack,
+    "Defense": _defense,
+    "Skill": _skill,
   };
 
   // methods
   void increaseStat(String stat) {
     if (_points > 0) {
-      if (stat == 'health') {
+      if (stat == 'Health') {
         _health++;
       }
-      if (stat == 'attack') {
+      if (stat == 'Attack') {
         _attack++;
       }
-      if (stat == 'defense') {
+      if (stat == 'Defense') {
         _defense++;
       }
-      if (stat =='skill') {
+      if (stat =='Skill') {
         _skill++;
       }
       _points--;
@@ -42,21 +42,31 @@ mixin Stats {
   }
 
   void decreaseStat(String stat) {
-    if (stat == 'health' && _health > 5) {
+    if (stat == 'Health' && _health > 5) {
       _health--;
       _points++;
     }
-    if (stat == 'attack' && _attack > 5) {
+    if (stat == 'Attack' && _attack > 5) {
       _attack--;
       _points++;
     }
-    if (stat == 'defense' && _defense > 5) {
+    if (stat == 'Defense' && _defense > 5) {
       _defense--;
       _points++;
     }
-    if (stat == 'skill' && _skill > 5) {
+    if (stat == 'Skill' && _skill > 5) {
       _skill--;
       _points++;
     }
+  }
+
+  // set stats & points
+  void setStats({ required int points, required Map<String, dynamic> stats}) {
+    _points = points;
+    
+    _health = stats['Health'];
+    _attack = stats['Attack'];
+    _defense = stats['Defense'];
+    _skill = stats['Skill'];
   }
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:testam_sa_mearga/models/character.dart';
 import 'package:testam_sa_mearga/screens/profile/skill_list.dart';
 import 'package:testam_sa_mearga/screens/profile/stats_table.dart';
+import 'package:testam_sa_mearga/services/character_store.dart';
 import 'package:testam_sa_mearga/shared/styled_button.dart';
 import 'package:testam_sa_mearga/shared/styled_text.dart';
 import 'package:testam_sa_mearga/theme.dart';
@@ -86,6 +88,7 @@ class Profile extends StatelessWidget {
             // save button
             StyledButton(
               onPressed: (){
+                Provider.of<CharacterStore>(context, listen: false).saveCharacter(character);
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                   content:StyledHeading('Character was saved'),
                   showCloseIcon: true,
